@@ -1,10 +1,10 @@
 # Projeto
 
-Para o `[clientes : Pessoas que são idosas ou cuidam de idosos]`, cujo `[problema que precisa ser resolvido é existe um número considerável queda de idosos em ambientes doméstico isso tanto no Brasil quanto no Mundo]`, o `[projeto de app para amenizar esse problema]` é um `[categoria do produto de acessibilidade],`que diferentemente do `[alternativas`], o nosso produto `[possui viés de ser inédito]`.
+Para `[idosos ou cuidam de idosos]`, cujo `[problema que precisa ser resolvido é existe um número considerável queda de idosos em ambientes doméstico isso tanto no Brasil quanto no Mundo]`, o `[projeto de app para amenizar esse problema]` é um `[categoria do produto de acessibilidade],`que diferentemente do `[alternativas`], o nosso produto `[possui viés de ser inédito]`.
 
 ### Problemas
 
-1) Problema 1 : Existe um perigo maior com á saude dos idosos
+1) Problema 1 : Segundo dados do Ministério da Saúde,  70% das quedas em idosos ocorrem dentro de casa e acometem idosos com mais de 65 anos. Em idosos acima de 80 anos , a prevalência é ainda mais alta e a mortalidade associada a quedas chega a ser seis vezes maior.
 2) Problema 2 : Necessidade de cuidar das quedas do idosos
 3) Problema 3 : Necessidade de centralização da resolução desse problema em um único local
 
@@ -21,17 +21,21 @@ Uma persona representa um usuário do produto e essa descrição deve falar não
 -Persona cuidador : Um pessoa que possui um parente ou alguém sob seus cuidados e deseja ter um maior controle sobre a situação da pessoa idosa 
 -Persona paciente : Um pessoa idosa que está pensando na sua condinção mais debilitada e percebe que precisa de mais cuidados 
 
-### Persona X
+### Persona Maria, 75 anos
 
 *O que ela faz?*
+Maria é uma idosa que vive sozinha e tem mobilidade reduzida.
 
 *O que ela espera?*
+Maria espera um sistema que a ajude a se sentir segura em casa, sabendo que será assistida rapidamente em caso de uma queda.
 
-### Persona Y
+### Persona João, 35 anos
 
 *O que ela faz?*
+João é filho de Maria e seu cuidador principal, mas trabalha fora e não pode estar sempre presente.
 
 *O que ela espera?*
+João espera um aplicativo que o avise imediatamente se sua mãe cair, permitindo que ele tome providências rápidas para ajudá-la.
 
 ## Marcos
 
@@ -71,12 +75,12 @@ Acreditamos que esse `Marco 1` vai conseguir `resultado esperado`. Saberemos que
 
    * Ação de mitigação 1.1.
 
-2. **Risco 2** descrição do risco. *Severidade Média e Probabilidade Alta*.
+2. **Invasão de privacidade dos usuários.** *Severidade Alta e Probabilidade Média*.
 
    Ações para mitigação do risco:
 
-   * Ação de mitigação 2.1.
-   * Ação de mitigação 2.2.
+   * Garantir a criptografia de todos os dados.
+   * Implementar políticas de privacidade robustas.
 
 ## Componentes
 
@@ -103,10 +107,10 @@ Stakeholder 2 <br />
 
 ## Equipe
 
-Membro 1 <br />
-*Gerente de Projeto* <br />
-*E-mail* <br />
-https://github.com/edgebr
+Itallo Ramon Veiga Paranhos <br />
+*Cargo à definir* <br />
+*irvp@ic.ufal.br* <br />
+https://github.com/italloramon
 
 Membro 2 <br />
 *Desenvolvedor Sênior* <br />
