@@ -86,7 +86,7 @@ Acreditamos que esse `Marco 4` vai conseguir `Uma integração entre a captura d
 
    Ações para mitigação do risco:
 
-   * Ação de mitigação 1.1. Encontrar boas bases para i treinamento da rede neural.
+   * Ação de mitigação 1.1. Encontrar boas bases para o treinamento da rede neural.
 
 2. **Invasão de privacidade dos usuários.** *Severidade Alta e Probabilidade Média*.
 
@@ -97,14 +97,12 @@ Acreditamos que esse `Marco 4` vai conseguir `Uma integração entre a captura d
 
 ## Componentes
 
-### Aplicativo Web
-[descrição breve]
-https://github.com/edgebr/templates-artefatos
-
 ### Aplicativo Mobile
-[descrição breve]
+No aplicativo, o responsável pelo idoso será avisado caso uma queda seja detectada. No momento em que for avisado, ele terá acesso a uma foto do momento.
 https://github.com/edgebr/templates-artefatos
 
+### Servidor para o modelo de IA
+No servidor, ao receber a gravação em tempo real, o modelo será capaz de detectar uma queda e o aviso será enviado.
 
 ## Stakeholders
 
