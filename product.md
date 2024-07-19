@@ -95,6 +95,9 @@ Acreditamos que esse `Marco 4` vai conseguir `Uma integração entre a captura d
    * Garantir a criptografia de todos os dados.
    * Implementar políticas de privacidade robustas.
 
+3. **Baixa ou Nenhuma conexão com a internet.** *Severidade Alto e Probabilidade baixa*.
+
+
 ## Componentes
 
 ### Aplicativo Mobile
@@ -103,6 +106,9 @@ https://github.com/edgebr/templates-artefatos
 
 ### Servidor para o modelo de IA
 No servidor, ao receber a gravação em tempo real, o modelo será capaz de detectar uma queda e o aviso será enviado.
+
+### Servidor para backend
+No servidor, será possível realizar cadastro dos usuários e responsáveis. Armenezar informações.
 
 ## Stakeholders
 
