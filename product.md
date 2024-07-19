@@ -45,35 +45,48 @@ Podemos pensar nessas pequenas versões como MVPs (do inglês, *minimum viable p
 
 ### Marco 1 - 20/12/2022
 
-Acreditamos que esse `Marco 1` vai conseguir `resultado esperado`. Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
+Acreditamos que esse `Marco 1` vai conseguir `Uma interface intuitiva para o aplicativo e um servidor para cadastro dos responsáveis`. Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
 
 #### Funcionalidades
 
-- [x] Funcionalidade 1.
-- [x] Funcionalidade 2.
-- [x] Funcionalidade 3.
+- [x] Funcionalidade 1. Interfce do app onde onde o responsável pelo idoso terá o acesso.
+- [ ] Funcionalidade 2. Backend para cadastro dos responsáveis.
 
 [Release Notes ](release_notes_1.md)
 
 ### Marco 2 - 20/01/2023
 
-Acreditamos que esse `Marco 1` vai conseguir `resultado esperado`. Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
+Acreditamos que esse `Marco 2` vai conseguir `O treinamento de um modelo inicial capaz de identificar quedas`. Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
 
 #### Funcionalidades
 
-- [x] Funcionalidade 1.
-- [x] Funcionalidade 2.
-- [ ] Funcionalidade 3.
+- [x] Funcionalidade 1. Um modelo capaz de identificar uma queda.
+
+### Marco 3 - 20/01/2023
+
+Acreditamos que esse `Marco 3` vai conseguir `Uma integração da câmera do computador com o servidor do modelo de IA`. Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
+
+#### Funcionalidades
+
+- [x] Funcionalidade 1. A partir da câmera do computador, seramos capazes de identificar quedas.
+
+
+### Marco 4 - 20/01/2023
+
+Acreditamos que esse `Marco 4` vai conseguir `Uma integração entre a captura da imagem, o servidor do modelo e o app`. Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
+
+- [x] Funcionalidade 1. Ao detectar uma queda, o sistema avisará ao responsável sobre o ocorrido.
+
 
 [Release Notes ](release_notes_1.md)
 
 ## Riscos
 
-1. **Risco 1** descrição do risco. *Severidade Baixa e Probabilidade Alta*.
+1. **Risco 1** Qualidade do modelo. *Severidade Alta e Probabilidade Alta*.
 
    Ações para mitigação do risco:
 
-   * Ação de mitigação 1.1.
+   * Ação de mitigação 1.1. Encontrar boas bases para i treinamento da rede neural.
 
 2. **Invasão de privacidade dos usuários.** *Severidade Alta e Probabilidade Média*.
 
@@ -112,7 +125,7 @@ Itallo Ramon Veiga Paranhos <br />
 *irvp@ic.ufal.br* <br />
 https://github.com/italloramon
 
-Membro 2 <br />
+José Anthony Dantas Santana <br />
 *Desenvolvedor Sênior* <br />
 *E-mail* <br />
 https://github.com/edgebr
