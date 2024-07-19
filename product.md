@@ -10,7 +10,7 @@ Para `[idosos ou cuidam de idosos]`, cujo `[problema que precisa ser resolvido Ã
 
 ### Expectativas
 
-1) Expectativa 1 : Armenizar o problema da queda dos idosos
+1) Expectativa 1 : Amenizar as consequÃªncias da queda. Uma vez que o atendimento seria agilizado.
 2) Expectativa 2 : Melhorar a qualidade de vida das pessoas idosas
 3) Expectativa 3 : Centralizar esse tipo de cuidado
 
