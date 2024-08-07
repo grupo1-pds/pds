@@ -3,50 +3,61 @@ import requests
 import numpy as np
 import time
 
-# Id webcam
-webcam_id = 'webcam_1'
+# Configurações
+WEBCAM_ID = 'webcam_1'
+API_URL = 'http://localhost:5000/detect_fall_batch'
+CAPTURE_DURATION = 10
 
-# URL da API
-url = 'http://localhost:5000/detect_fall_batch'
-
-# Tempo de captura pra enviar pra API
-capture_duration = 10
-
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-
-if not cap.isOpened():
-    print("Não abriu")
-    exit()
-
-while True:
+def captureFrames(cap, duration):
     frames = []
-    start_time = time.time()
-    while time.time() - start_time < capture_duration:
+    startTime = time.time()
+    while time.time() - startTime < duration:
         ret, frame = cap.read()
         if not ret:
-            print("Não tem frame")
-            break
+            raise RuntimeError("Não foi possível ler o frame da câmera")
         
-        _, img_encoded = cv2.imencode('.jpg', frame)
+        _, imgEncoded = cv2.imencode('.jpg', frame)
+        frames.append(imgEncoded.tobytes())
         
-        frames.append(img_encoded.tobytes())
-
         cv2.imshow("Imagem", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+            return [], True
 
-    files = [('frames', (f'frame_{i}.jpg', frames[i], 'image/jpeg')) for i in range(len(frames))]
+    return frames, False
 
-    # Envia a lista de frames para a API com o id da webcam
-    response = requests.post(url, files=files, data={'webcam_id': webcam_id})
+def sendFramesToAPI(frames, webcamId, url):
+    files = [('frames', (f'frame_{i}.jpg', frame, 'image/jpeg')) for i, frame in enumerate(frames)]
+    try:
+        response = requests.post(url, files=files, data={'webcam_id': webcamId})
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        raise RuntimeError(f"Erro ao enviar frames para a API: {e}")
 
-    if response.ok:
-        print(response.json())
-    else:
-        print('Falha ao enviar a batch de frames para a API: ', response.text)
+def main():
+    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+    if not cap.isOpened():
+        print("Não foi possível abrir a câmera")
+        return
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    try:
+        while True:
+            try:
+                frames, quit = captureFrames(cap, CAPTURE_DURATION)
+                if quit:
+                    break
+                result = sendFramesToAPI(frames, WEBCAM_ID, API_URL)
+                print(result)
+            except RuntimeError as e:
+                print(e)
+                break
 
-cap.release()
-cv2.destroyAllWindows()
+            # Verifica se a tecla 'q' foi pressionada para sair
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+    finally:
+        cap.release()
+        cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    main()

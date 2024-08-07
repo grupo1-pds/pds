@@ -4,40 +4,41 @@ import numpy as np
 
 app = Flask(__name__)
 
-def detect_fall_batch(frames):
-    # Processa cada frame com o modelo de detecção de quedas
+def detectFallBatch(frames):
     results = []
-    for _ in frames:
-        # O nosso modelo vem aqui
+    for frame in frames:
+        # Aqui entra o nosso modelo
         result = {"fall_detected": False, "confidence": 0.85}
         results.append(result)
     return results
 
+def processFrames(files):
+    frames = []
+    for file in files:
+        try:
+            fileBytes = np.frombuffer(file.read(), np.uint8)
+            img = cv2.imdecode(fileBytes, cv2.IMREAD_COLOR)
+            frames.append(img)
+        except Exception as e:
+            raise ValueError(f"Erro ao processar frame: {e}")
+    return frames
+
 @app.route('/detect_fall_batch', methods=['POST'])
-def detect_fall_batch_endpoint():
+def detectFallBatchEndpoint():
     if 'webcam_id' not in request.form:
         return jsonify({"error": "No webcam_id provided"}), 400
 
-    # Obtém a lista de frames
     files = request.files.getlist('frames')
-    webcam_id = request.form['webcam_id']
-    frame_list = []
+    if not files:
+        return jsonify({"error": "No frames provided"}), 400
 
-    for file in files:
-        file_bytes = np.frombuffer(file.read(), np.uint8)
-        img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-        frame_list.append(img)
-
-    # Processa a lista de frames com o modelo de detecção de quedas
-    results = detect_fall_batch(frame_list)
-
-    # Inclui o identificador da webcam no resultado
-    response = {
-        "webcam_id": webcam_id,
-        "results": results
-    }
-
-    return jsonify(response)
+    try:
+        frames = processFrames(files)
+        results = detectFallBatch(frames)
+        response = {"webcam_id": request.form['webcam_id'], "results": results}
+        return jsonify(response)
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
