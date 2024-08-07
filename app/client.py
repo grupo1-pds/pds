@@ -1,43 +1,49 @@
 import cv2
 import requests
 import numpy as np
+import time
 
-# Identificador único da webcam
-deviceId = '1'
+# Id webcam
+webcam_id = 'webcam_1'
 
 # URL da API
-url = 'http://localhost:5000/detect_fall'
+url = 'http://localhost:5000/detect_fall_batch'
 
-cap = cv2.VideoCapture("rtsp://192.168.0.46:8080/h264_ulaw.sdp")#Essa parte pode mudar se quiser testar com algo , estou pensando em comprar uma camera barat(20 conto) pra testar
+# Tempo de captura pra enviar pra API
+capture_duration = 10
+
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
 if not cap.isOpened():
     print("Não abriu")
     exit()
 
 while True:
-    ret, frame = cap.read()
+    frames = []
+    start_time = time.time()
+    while time.time() - start_time < capture_duration:
+        ret, frame = cap.read()
+        if not ret:
+            print("Não tem frame")
+            break
+        
+        _, img_encoded = cv2.imencode('.jpg', frame)
+        
+        frames.append(img_encoded.tobytes())
 
-    if not ret:
-        print("Não tem frame")
-        break
+        cv2.imshow("Imagem", frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
-    # Codifica a imagem em JPEG
-    _, img_encoded = cv2.imencode('.jpg', frame)
-    
+    files = [('frames', (f'frame_{i}.jpg', frames[i], 'image/jpeg')) for i in range(len(frames))]
 
-    # Converte a imagem para bytes
-    img_bytes = img_encoded.tobytes()
+    # Envia a lista de frames para a API com o id da webcam
+    response = requests.post(url, files=files, data={'webcam_id': webcam_id})
 
-    # Envia a imagem para a API com o identificador do dispositivo
-    response = requests.post(url, files={'image': img_bytes}, data={'deviceId': deviceId})
-
-    # Verifica a resposta da API
     if response.ok:
         print(response.json())
     else:
-        print('Falha ao enviar a imagem para a API')
-
-    cv2.imshow("Imagem", frame)
+        print('Falha ao enviar a batch de frames para a API: ', response.text)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
