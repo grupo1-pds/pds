@@ -109,17 +109,16 @@ No servidor, será possível realizar cadastro dos usuários e gestão de respon
 ### Servidor de Notificações
 Serviço responsável por enviar os alertas para os responsáveis cadastrados no sistema.
 
-
 ## Equipe
 
 Itallo Ramon Veiga Paranhos <br />
 Desenvolvedor Full-Stack <br />
-irvp@ic.ufal.br <br />
+Email : irvp@ic.ufal.br <br />
 https://github.com/italloramon
 
 Rafael Ribeiro <br />
 Desenvolvedor Full-Stack <br />
-rrlc@ic.ufal.br <br />
+Email : rrlc@ic.ufal.br <br />
 https://github.com/rafaelrlc
 
 José Anthony Dantas Santana <br />
@@ -127,14 +126,19 @@ Desenvolvedor IA <br />
 E-mail  jads@ic.ufal.br<br />
 https://github.com/janthonyds
 
+Arthur Vinícius Rozendo Santos <br />
+Desenvolvedor IA <br />
+Email : avrs@ic.ufal.br <br />
+https://github.com/arthurvrs
+
 Davi Souza de Lima<br/>
 Líder de Projeto e Desenvolvedor Back-End<br />
-E-mail <br />
+Email : dsl@ic.ufal.br <br />
 https://github.com/davisouzal
 
 Lucas Vinicius Moura Costa <br/>
 Desenvolvedor Back-End <br/>
-Email : lvmc@ic.ufal.br
+Email : lvmc@ic.ufal.br <br/>
 https://github.com/LucasVinicius-sudo
 
 ## Status Reports
