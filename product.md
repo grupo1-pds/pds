@@ -18,8 +18,8 @@ Para `[idosos ou cuidam de idosos]`, cujo `[problema que precisa ser resolvido �
 
 Uma persona representa um usuário do produto e essa descrição deve falar não só o papel, mas também suas necessidades e seus objetivos. Isso cria uma representação realista dos usuários, auxiliando a equipe a descrever funcionalidades a partir do ponto de vista de quem vai usar o produto (Aguiar, 2021).
 
--Persona cuidador : Um pessoa que possui um parente ou alguém sob seus cuidados e deseja ter um maior controle sobre a situação da pessoa idosa 
--Persona paciente : Um pessoa idosa que está pensando na sua condinção mais debilitada e percebe que precisa de mais cuidados 
+- Persona cuidador : Um pessoa que possui um parente ou alguém sob seus cuidados e deseja ter um maior controle sobre a situação da pessoa idosa 
+- Persona paciente : Um pessoa idosa que está pensando na sua condinção mais debilitada e percebe que precisa de mais cuidados 
 
 ### Persona Maria, 75 anos
 
@@ -45,11 +45,11 @@ Podemos pensar nessas pequenas versões como MVPs (do inglês, *minimum viable p
 
 ### Marco 1 - 20/12/2022
 
-Acreditamos que esse `Marco 1` vai conseguir `Uma interface intuitiva para o aplicativo e um servidor para cadastro dos responsáveis`. Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
+Acreditamos que esse `Marco 1` vai conseguir `Uma interface intuitiva para e um servidor para cadastro dos responsáveis`.  Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
 
 #### Funcionalidades
 
-- [x] Funcionalidade 1. Interfce do app onde onde o responsável pelo idoso terá o acesso.
+- [x] Funcionalidade 1. Interface Web, onde onde o responsável pelo idoso terá o acesso.
 - [ ] Funcionalidade 2. Backend para cadastro dos responsáveis.
 
 [Release Notes ](release_notes_1.md)
@@ -75,7 +75,7 @@ Acreditamos que esse `Marco 3` vai conseguir `Uma integração da câmera do com
 
 Acreditamos que esse `Marco 4` vai conseguir `Uma integração entre a captura da imagem, o servidor do modelo e o app`. Saberemos que isso aconteceu com base em `métricas para validar a hipótese do negócio`.
 
-- [x] Funcionalidade 1. Ao detectar uma queda, o sistema avisará ao responsável sobre o ocorrido.
+- [x] Funcionalidade 1. Ao detectar uma queda, o sistema avisará aos responsáveis sobre o ocorrido por meio de notificações de mensagem/ligação.
 
 
 [Release Notes ](release_notes_1.md)
@@ -100,44 +100,42 @@ Acreditamos que esse `Marco 4` vai conseguir `Uma integração entre a captura d
 
 ## Componentes
 
-### Aplicativo Mobile
-No aplicativo, o responsável pelo idoso será avisado caso uma queda seja detectada. No momento em que for avisado, ele terá acesso a uma foto do momento.
-https://github.com/edgebr/templates-artefatos
-
-### Servidor para o modelo de IA
+### Servidor para o Modelo de IA
 No servidor, ao receber a gravação em tempo real, o modelo será capaz de detectar uma queda e o aviso será enviado.
 
-### Servidor para backend
-No servidor, será possível realizar cadastro dos usuários e responsáveis. Armenezar informações.
+### Servidor para Backend
+No servidor, será possível realizar cadastro dos usuários e gestão de responsáveis. Enviar notificações e armazenar logs.
 
-## Stakeholders
+### Servidor de Notificações
+Serviço responsável por enviar os alertas para os responsáveis cadastrados no sistema.
 
-Stakeholder 1 <br />
-*Key User - Cargo na Empresa X* <br />
-*E-mail* <br />
-(xx) xxxxx-xxxx
-
-Stakeholder 2 <br />
-*Key User - Cargo na Empresa X* <br />
-*E-mail* <br />
-(xx) xxxxx-xxxx
 
 ## Equipe
 
 Itallo Ramon Veiga Paranhos <br />
-*Cargo à definir* <br />
-*irvp@ic.ufal.br* <br />
+Desenvolvedor Full-Stack <br />
+irvp@ic.ufal.br <br />
 https://github.com/italloramon
 
-José Anthony Dantas Santana <br />
-*Desenvolvedor Sênior* <br />
-*E-mail* <br />
-https://github.com/edgebr
+Rafael Ribeiro <br />
+Desenvolvedor Full-Stack <br />
+rrlc@ic.ufal.br <br />
+https://github.com/rafaelrlc
 
-Membro 3 <br />
-*Analista de Qualidade Pleno* <br />
-*E-mail* <br />
-https://github.com/edgebr
+José Anthony Dantas Santana <br />
+Desenvolvedor IA <br />
+E-mail  jads@ic.ufal.br<br />
+https://github.com/janthonyds
+
+Davi Souza de Lima<br/>
+Líder de Projeto e Desenvolvedor Back-End<br />
+E-mail <br />
+https://github.com/davisouzal
+
+Lucas Vinicius Moura Costa <br/>
+Desenvolvedor Back-End <br/>
+Email : lvmc@ic.ufal.br
+https://github.com/LucasVinicius-sudo
 
 ## Status Reports
 
